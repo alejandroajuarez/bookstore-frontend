@@ -21,10 +21,11 @@ export default {
   },
   created: function () {
     this.handleIndexBooks();
+      this.handleTest();
   },
   methods: {
     handleIndexBooks: function () {
-      axios.get("/books.json").then((response) => {
+      axios.get("http://localhost:3000/actors.json").then((response) => {
         console.log("books index", response);
         this.books = response.data;
       });
@@ -69,10 +70,17 @@ export default {
         var index = this.books.indexOf(book);
         this.books.splice(index, i);
         this.handleClose();
+        this.handleLastTest();
       });
     },
     handleClose: function () {
       this.isBooksShowVisible = false;
+    },
+    handleFirstTest: function () {
+      console.log("end of first handle function");
+    },
+    handleLastTest: function () {
+      console.log("end of last handle function");
     }
   },
 };
