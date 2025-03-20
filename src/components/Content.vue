@@ -63,6 +63,14 @@ export default {
         console.log("books update error", error.response);
       });
     },
+    handleDestroyBook: function (book) {
+      axios.delete(`/books/${book.id}.json`).then((response) => {
+        console.log("books destroy", response);
+        var index = this.books.indexOf(book);
+        this.books.splice(index, i);
+        this.handleClose();
+      });
+    },
     handleClose: function () {
       this.isBooksShowVisible = false;
     }
@@ -75,7 +83,7 @@ export default {
     <BooksNew v-on:createBook="handleCreateBooks"/>
     <BooksIndex v-bind:books="books" v-on:showBook="handleShowBook"/>
     <Modal v-bind:show="isBooksShowVisible" v-on:close="handleClose">
-      <BooksShow v-bind:book="currentBook" v-on:updateBook="handleUpdateBook" />
+      <BooksShow v-bind:book="currentBook" v-on:updateBook="handleUpdateBook" v-on:destroyBook="handleDestroyBook"/>
     </Modal>
   </main>
 </template>

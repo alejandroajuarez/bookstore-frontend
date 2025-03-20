@@ -45,5 +45,6 @@ export default {
       </div>
       <button type="submit">Update Book</button>
     </form>
+    <button v-on:click="$emit('destroyBook', book)">Delete Book Listing</button>
   </div>
 </template>
