@@ -3,15 +3,15 @@ import { createWebHistory, createRouter } from "vue-router";
 import Signup from "./components/Signup.vue";
 import Login from "./components/Login.vue";
 import LogoutLink from "./components/LogoutLink.vue";
-import PhotosIndex from "./components/PhotosIndex.vue";
-import PhotosNew from "./components/PhotosNew.vue";
+import BooksIndex from "./components/BooksIndex.vue";
+import BooksNew from "./components/BooksNew.vue";
 
 const routes = [
   { path: "/signup", component: Signup },
   { path: "/login", component: Login },
   { path: "/logout", component: LogoutLink },
-  { path: "/photos", component: PhotosIndex },
-  { path: "/photos/new", component: PhotosNew },
+  { path: "/books", component: BooksIndex },
+  { path: "/books/new", component: BooksNew },
 ];
 
 const router = createRouter({
