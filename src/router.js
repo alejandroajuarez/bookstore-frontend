@@ -5,12 +5,13 @@ import Login from "./components/Login.vue";
 import LogoutLink from "./components/LogoutLink.vue";
 import BooksIndex from "./components/BooksIndex.vue";
 import BooksNew from "./components/BooksNew.vue";
+import Content from "./components/Content.vue";
 
 const routes = [
   { path: "/signup", component: Signup },
   { path: "/login", component: Login },
   { path: "/logout", component: LogoutLink },
-  { path: "/books", component: BooksIndex },
+  { path: "/books", component: Content },
   { path: "/books/new", component: BooksNew },
 ];
 

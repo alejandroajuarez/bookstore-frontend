@@ -21,14 +21,12 @@ export default {
   },
   created: function () {
     this.handleIndexBooks();
-      this.handleTest();
   },
   methods: {
     handleIndexBooks: function () {
-      axios.get("http://localhost:3000/actors.json").then((response) => {
-        console.log("books index", response);
-        this.books = response.data;
-      });
+      axios.get("http://localhost:5000/books.json").then(response => {
+        console.log(response.data)
+      })
     },
     handleCreateBooks: function (params) {
       axios
@@ -68,7 +66,7 @@ export default {
       axios.delete(`/books/${book.id}.json`).then((response) => {
         console.log("books destroy", response);
         var index = this.books.indexOf(book);
-        this.books.splice(index, i);
+        this.books.splice(index, 1);
         this.handleClose();
         this.handleLastTest();
       });
